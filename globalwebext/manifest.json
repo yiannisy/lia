@@ -1,8 +1,8 @@
 {
-  "name": "My First Extension",
-  "version": "1.0",
+  "name": "Lia : Localized Internet Access",
+  "version": "0.1",
   "manifest_version": 2,
-  "description": "The first extension that I made.",
+  "description": "Lia is a chrome extension that allows you to access the web from the country you prefer to do so.",
   "browser_action": {
     "default_icon": "icon.png",
 	"default_popup": "popup.html"
