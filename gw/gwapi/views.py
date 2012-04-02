@@ -4,11 +4,11 @@ from django.http import HttpResponse
 
 def get_proxy_url(code):
     if code == 'GR':
-        return "193.46.60.74:3128"
+        return "150.140.184.110:3128"
     elif code == 'US':
-        return "148.52.151.3:3128"
+        return "72.64.146.136:8080"
     elif code == 'UK':
-        return "149.52.151.3:3128"
+        return "109.75.171.216:6515"
     
 def get_countries(req):
     if req.method == "GET":
