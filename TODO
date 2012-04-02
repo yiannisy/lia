@@ -1,0 +1,6 @@
+* Client/Backend : Deactivate proxy option (add as a special country).
+* Backend : Move backend to a simpler framework.
+* Backend : Setup on a server-machine.
+* Backend : Query hidemyass for real-time servers.
+* Client : Update title to show current status.
+* Client : Change extension icon.
