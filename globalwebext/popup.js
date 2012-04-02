@@ -2,7 +2,12 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-jQuery.getJSON("http://192.168.1.217:8000/gw/get_countries",function(data){
+var lia_server = "192.168.1.217:8000";
+var lia_url = "http://192.168.1.217:8000";
+
+
+var countries_url = lia_url + "/gw/get_countries";
+jQuery.getJSON(countries_url,function(data){
 		for (var i = 0; i <= 2;i++){
 			$(document.createElement("img"))
 				.attr({src:data[i].img_url,title:data[i].code})
@@ -10,7 +15,7 @@ jQuery.getJSON("http://192.168.1.217:8000/gw/get_countries",function(data){
 				.click({details:data[i]},function(event){
 						var details = event.data.details;
 						console.log("Fetching proxy details for " + details.name);
-						var country_url = "http://192.168.1.217:8000/gw/get_country?code=" + event.data.details.code;
+						var country_url = lia_url + "/gw/get_country?code=" + details.code;
 						jQuery.getJSON(country_url, function(proxy_details){
 								console.log("Setting proxy to " + proxy_details.proxy_url + ":" + proxy_details.proxy_port);
 								var config = {
@@ -21,12 +26,16 @@ jQuery.getJSON("http://192.168.1.217:8000/gw/get_countries",function(data){
 											host: proxy_details.proxy_url,
 											port: proxy_details.proxy_port
 										},
+										bypassList: [lia_server]
 									}
 								};
 								chrome.proxy.settings.set(
 														  {value: config, scope: 'regular'},
 														  function() {});
-							});
+							});						
+						chrome.browserAction.setBadgeBackgroundColor({color:[0,0,128,255]});
+						chrome.browserAction.setBadgeText({text:details.code});
+
 					})
 				}
 	});
