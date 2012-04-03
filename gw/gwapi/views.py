@@ -13,10 +13,10 @@ def get_proxy_url(code):
 def get_countries(req):
     if req.method == "GET":
         return HttpResponse(json.dumps([
-            {"code":"XX","name":"Deactivate","img_url":"icon.png"},
-            {"code":"GR","name":"Greece","img_url":"http://yuba.stanford.edu/~yiannis/greece.png"},
-            {"code":"US","name":"United States","img_url":"http://yuba.stanford.edu/~yiannis/us.png"},
-            {"code":"UK","name":"United Kingdom","img_url":"http://yuba.stanford.edu/~yiannis/uk.png"},
+            {"code":"XX","name":"Deactivate","img_url":"images/icon.png"},
+            {"code":"GR","name":"Greece","img_url":"images/greece.png"},
+            {"code":"US","name":"United States","img_url":"images/us.png"},
+            {"code":"UK","name":"United Kingdom","img_url":"images/uk.png"},
             ]))
 
 def get_country(req):
