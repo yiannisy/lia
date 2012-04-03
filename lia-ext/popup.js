@@ -2,8 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-var lia_server = "192.168.1.217:8000";
-var lia_url = "http://192.168.1.217:8000";
+var lia_server = "171.67.75.14:8080";
+var lia_url = "http://171.67.75.14:8080";
 
 
 var countries_url = lia_url + "/gw/get_countries";
